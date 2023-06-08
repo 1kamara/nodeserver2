@@ -5,7 +5,9 @@
   "type": "module",
   "main": "script.js",
   "scripts": {
-    "start": "nodemon server2.js"
+    "start": "nodemon server2.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
