@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import cors from 'cors'; 
 import bcrypt from'bcrypt';
 import knex from 'knex';
+import path from 'path';
 
 const db = knex({
     client: 'pg',
@@ -22,6 +23,8 @@ const db = knex({
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
+// app.set('views', path.join(__dirname, 'views'))
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
      res.send('it is running fine') 
